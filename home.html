@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="shortcut icon" href="assets/github-logo.png" type="image/x-icon">
+    <!-- font family -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<!-- tainwind css -->
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<!-- font oesem -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body class="bg-[#F8FAFC] min-h-screen  ">
+
+    <header class="bg-white flex justify-between p-6">
+        <div class="logo flex items-center gap-3">
+            <img class="w-15" src="assets/github-logo.png" alt="">
+            <h3 class="font-bold text-2xl">GitHub Issues Tracker</h3>
+        </div>
+        <div class="search flex gap-3 items-center">
+          <label class="input">
+  <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2.5"
+      fill="none"
+      stroke="currentColor"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.3-4.3"></path>
+    </g>
+  </svg>
+  <input id="search" class="w-full" type="search"  required placeholder="Search" />
+</label>
+<button id="serbtn" class="btn bg-[#4A00FF]  text-white"><i class="fa-solid fa-plus"></i> New Issue</button>
+
+        </div>
+
+    </header>
+
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
+
+    <main class="w-10/12  mx-auto py-10 ">
+          <div class="bg-white p-8 rounded-[12px] shadow-sm mb-6">
+            <button id="allbtn" class="btn tab btn-outline w-23 text-[#64748B] ">All</button>
+            <button id="openbtn" class="btn tab btn-outline w-23 text-[#64748B]">Open</button>
+            <button id="closebtn" class="btn tab btn-outline w-23 text-[#64748B]">Closed</button>
+
+           </div>
+
+           <div class="bg-white  rounded-[12px] shadow-md">
+            <div class="hero flex p-5 bt-[#E4E4E7] border-[#E4E4E7] justify-between">
+
+
+                <div class="left flex gap-3 items-center">
+                    <img class="w-[60px] bg-[#ECE4FF] p-2 rounded-full" src="assets/Aperture.png" alt="">
+                    <div class="gap-0">
+                     <h2 class="font-bold text-2xl"><span id="counttext">00 </span> Issues</h2>
+                     <p>Track and manage your project issues</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6">
+                    <button class=""><i class="fa-solid fa-circle" style="color: rgb(0, 169, 110);"></i> Open</button>
+                    <button class=""><i class="fa-solid fa-circle" style="color: rgb(168, 85, 247);"></i> Closed</button>
+
+                </div>
+
+
+
+            </div>
+            
+            <div id="issueconteiner" class="issueslist bg-[#FBFBFB] p-5 grid grid-cols-1 md:grid-cols-4 gap-3">
+
+
+<!-- ..............card design............................................... -->
+                <!-- <div id="issueCard" class=" bg-white pt-4 rounded-[11px] shadow-sm ">
+                    <div class="p-3 flex justify-between items-center">
+                       <img src="assets/Open-Status.png" alt="">
+                       <button class="btn rounded-full">High</button>
+                    </div>
+
+
+                    <div class="p-3">
+                       <h3 class="font-medium text-2xl leading-7 pb-2">Fix navigation menu on mobile devices</h3>
+                       <p class="text-[#64748B] leading-5">The navigation menu doesn't collapse properly on mobile devices...</p>
+
+                    </div>
+
+
+                    <div class="p-3 flex gap-1 pb-3">
+                        <button class="bg-[#FECACA] btn btn-soft btn-error  text-[#EF4444] rounded-full"><i class="fa-solid fa-bug" style="color: rgb(239, 68, 68);"></i> Bug</button>
+
+                         <button class="bg-[#FFF8DB] btn btn-soft btn-error  text-[#D97706] rounded-full"><i class="fa-solid fa-life-ring" style="color: rgb(217, 119, 6);"></i> help wanted</button>
+                    </div>
+
+
+                    <div class="p-3 border-t-1 border-[#E4E4E7]">
+                        <p class="text-[#64748B]">#1by john_doe</p>
+                        <p class="text-[#64748B]">1/15/2024</p>
+
+                    </div>
+
+                </div> -->
+<!-- ..............card design............................................... -->
+
+
+
+            </div>
+
+           </div>
+
+
+
+
+    </main>
+    
+
+
+    <section >
+
+        <!-- Open the modal using ID.showModal() method -->
+         <dialog id="mymodal" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box space-y-6">
+               <div id="modalbox" class="space-y-4">
+                
+            
+      
+      </div>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn bg-[#4A00FF] text-white">Close</button>
+      </form>
+    </div>
+  </div>
+            </dialog>
+
+
+
+    </section>
+
+<script src="scipt/home.js"></script>
+</body>
+</html>
