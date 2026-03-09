@@ -30,3 +30,22 @@ Example:
 arr.map()
 arr.filter()
 arr.forEach()
+
+4️⃣ What is an Arrow Function
+
+Arrow function হলো JavaScript এর একটি short syntax function।
+
+Example:
+
+const add = (a,b) => a + b;
+
+এটি normal function এর short version।
+
+5️⃣ What are Template Literals
+
+Template literals ব্যবহার করা হয় string এর ভিতরে variable বা expression সহজে বসানোর জন্য। এটি backtick ` ` দিয়ে লেখা হয়।
+
+Example:
+
+const name = "Rahim";
+const text = `My name is ${name}`;
