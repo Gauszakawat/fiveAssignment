@@ -9,6 +9,7 @@ const createbug = (arry)=>{
 // 
 // //////all issue////////////
 const allbtn =  document.getElementById('allbtn').addEventListener('click' ,function loadData(){
+    manageloading(true);
      const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
     fetch(url)
     .then(res=> res.json())
@@ -83,10 +84,13 @@ const issuelist = document.getElementsByClassName('issueCard');
     const total = issuelist.length;
     document.getElementById('counttext').innerText = total;
 
+     manageloading(false);
+
 };
 // ////////////open data/////////
 
 const openbtn =  document.getElementById('openbtn').addEventListener('click',function openbtnload(){
+     manageloading(true);
      const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
     fetch(url)
     .then(res=> res.json())
@@ -149,12 +153,13 @@ Newcard.classList.add('openbadge');
 const issuelist = document.getElementsByClassName('issueCard');
     const total = issuelist.length;
     document.getElementById('counttext').innerText = total;
-
+ manageloading(false);
 }
 
 // ///////close btn///////
 
 const closebtn =  document.getElementById('closebtn').addEventListener('click',function closebtnload(){
+     manageloading(true);
      const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
     fetch(url)
     .then(res=> res.json())
@@ -223,7 +228,7 @@ issueconteiner.append(Newcard);
 
 
 
-
+ manageloading(false);
     
 }
 
@@ -314,7 +319,16 @@ const serbtn = document.getElementById('serbtn').addEventListener('click',functi
 
 
 
-
+// manage loading//////////
+const manageloading = (status)=>{
+    if(status === true){
+        document.getElementById('loadpert').classList.remove("hidden");
+        document.getElementById('issueconteiner').classList.add("hidden");
+    } else{
+         document.getElementById('issueconteiner').classList.remove("hidden");
+        document.getElementById('loadpert').classList.add("hidden");
+    }
+}
 
 
 
